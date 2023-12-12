@@ -17,6 +17,7 @@ app.get('/books', handleGetBooks);
 async function handleGetBooks( request, response){
   const books = await Books.find();
   response.status(200).json(books)
+  console.log(books);
 }
 
 app.get('/test', (request, response) => {
