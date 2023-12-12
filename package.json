@@ -14,6 +14,9 @@
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.18.2",
-    "mongoose": "^8.0.3"
+    "mongoose": "^8.0.3",
+    "nodemon": "^3.0.2"
   }
 }
+
+// node seed.js to send books to the db
