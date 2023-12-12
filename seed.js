@@ -39,5 +39,5 @@ async function seed(){
   }
   mongoose.disconnect();
 }
-
+// node seed.js to send books to the db
 seed();

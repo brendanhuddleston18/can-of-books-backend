@@ -15,9 +15,15 @@ mongoose.connect( process.env.MONGODB_URL );
 app.get('/books', handleGetBooks);
 
 async function handleGetBooks( request, response){
-  const books = await Books.find();
-  response.status(200).json(books)
-  console.log(books);
+ try{
+   const books = await Books.find();
+    response.status(200).json(books)
+    console.log(books);
+   
+} catch(e) {
+  console.error('Error getting books:', e);
+  response.status(500).json({err: 'Internal Server Error'});
+}
 }
 
 app.get('/test', (request, response) => {
