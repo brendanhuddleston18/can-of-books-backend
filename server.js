@@ -49,9 +49,19 @@ async function handleGetBooks(request, response) {
     response.status(500).json({ err: "Internal Server Error" });
   }
 }
+
+async function handleUpdateBooks(request, response){
+  let changedBook = request.body;
+  let id = request.params.id;
+  let updatedBook = await Book.findByIdAndUpdate( id, changedBook, {new:true, overwrite:true});
+  
+  response.json(updatedBook);
+}
+
 app.get("/books", handleGetBooks);
 app.post("/books", addBooks);
 app.delete('/books/:id', handleDelete);
+app.put('/books/:id', handleUpdateBooks);
 
 
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
