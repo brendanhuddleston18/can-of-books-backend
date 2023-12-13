@@ -43,7 +43,7 @@ async function handleGetBooks(request, response) {
   try {
     const books = await Book.find();
     response.status(200).json(books);
-    console.log(book);
+    console.log(books);
   } catch (e) {
     console.error("Error getting books:", e);
     response.status(500).json({ err: "Internal Server Error" });
