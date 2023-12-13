@@ -14,6 +14,17 @@ const PORT = process.env.PORT || 3001;
 mongoose.connect(process.env.MONGODB_URL);
 
 
+async function handleDelete( request, response){
+  let id = request.params.id;
+  try{
+    let deletedBook = await Book.findOneAndDelete({_id:id});
+    response.status(204).send({});
+    console.log("We finna delete", deletedBook);
+  } catch(e){
+    console.error("Could not delete error:", e);
+  }
+}
+
 async function addBooks(request, response) {
   let book = request.body;
   try {
@@ -40,9 +51,7 @@ async function handleGetBooks(request, response) {
 }
 app.get("/books", handleGetBooks);
 app.post("/books", addBooks);
+app.delete('/books/:id', handleDelete);
 
-app.get("/test", (request, response) => {
-  response.send("test request received");
-});
 
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
