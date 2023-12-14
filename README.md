@@ -99,5 +99,5 @@ What will your team do if one person is taking over the project and not letting 
 - Mention it and ensure both partners are contributing.
 
 How will you approach each other and the challenge of building an application knowing that it is impossible for two people to be at the exact same place in understanding and skill level?
-
+git 
 - Coming from a place of understanding, and taking it as a teaching opportunity as well as an opportunity to help a peer.
