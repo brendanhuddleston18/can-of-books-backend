@@ -13,7 +13,7 @@ This application allows users to insert/remove their favorite books to be displa
 
 - Clone repositories down. 
 
-- `npm i` to install all necessary dependencies
+- `npm i` to install all necessary dependenc
 
 ## Architecture
 <!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
